@@ -1,19 +1,24 @@
 package 排序算法;
 
+import org.junit.Test;
+
 import java.util.Queue;
+import java.util.Random;
 
 public class 快速排序 {
-    public static void main(String[] args) {
+    @Test
+    public  void test() {
         int [] nums = {3,2,1,2,4,2,7,19,-11,0,3};
         quicksort(nums,0,nums.length-1);
         for (int num : nums) {
             System.out.println(num);
         }
     }
-    public static  void quicksort(int [] nums,int left,int right){
+    public  void quicksort(int [] nums,int left,int right){
         //如果left >= right时，说明此时递归的数组长度为1，就不需要操作了
         if(left>=right)return;
         //记录主元的值
+        random_partition(nums ,left ,right);
         int pivot = nums[left];
         //这一步i的初始值很巧妙，由于主元的值已经记录过了，所以i下标所在的数组
         //数组位置等于一个空的位置，可以用来放其他的数字
@@ -42,6 +47,14 @@ public class 快速排序 {
         //递归进行移动
         quicksort(nums,left,i-1);
         quicksort(nums,i+1,right);
+    }
+    //随机选取主元
+    public void random_partition(int[] nums, int left, int right)
+    {
+        int i = left + (int)(Math.random() * (right-left+1));
+        int t = nums[left];
+        nums[left] = nums[i];
+        nums[i] = t;
     }
 
 }
