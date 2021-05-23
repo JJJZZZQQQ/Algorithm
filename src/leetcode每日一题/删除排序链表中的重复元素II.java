@@ -1,6 +1,8 @@
 package leetcode每日一题;
 
 
+import utils.ListNode;
+
 public class 删除排序链表中的重复元素II {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null) {
@@ -23,10 +25,3 @@ public class 删除排序链表中的重复元素II {
         return dummy.next;
     }
 }
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() { }
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
