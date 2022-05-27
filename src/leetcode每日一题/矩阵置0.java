@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class 矩阵置0 {
     /*空间复杂度常量级的算法
-    * 为了不开辟多的空间，应该使用本来就有的空间进行处理，达到最小的空间消耗*/
+     * 为了不开辟多的空间，应该使用本来就有的空间进行处理，达到最小的空间消耗*/
     public static void main(String[] args) {
-        int [][] matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
         int n = matrix.length;
         int m = matrix[0].length;
         boolean flagCol0 = false, flagRow0 = false;

@@ -14,20 +14,22 @@ public class NestedIterator implements Iterator<Integer> {
         dfs(nestedList);
         cur = vals.iterator();
     }
+
     @Override
     public Integer next() {
         return cur.next();
     }
+
     @Override
     public boolean hasNext() {
         return cur.hasNext();
     }
-    public void dfs(List <NestedInteger> nestedList) {
+
+    public void dfs(List<NestedInteger> nestedList) {
         for (NestedInteger nestedInteger : nestedList) {
-            if(nestedInteger.isInteger()){
+            if (nestedInteger.isInteger()) {
                 vals.add(nestedInteger.getInteger());
-            }
-            else {
+            } else {
                 dfs(nestedInteger.getList());
             }
         }

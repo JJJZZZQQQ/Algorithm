@@ -7,6 +7,6 @@ import java.util.List;
 
 public class 三角形最小路径和 {
     @Test
-    public void test (){
+    public void test() {
     }
 }

@@ -4,34 +4,36 @@ import org.junit.Test;
 
 public class 判断子序列 {
     @Test
-    public void myanswer(){
+    public void myanswer() {
         String s = "abc";
         String t = "ahbgdc";
         int m = s.length();//小串
         int n = t.length();//大串
-        int j = 0 , i =0;
-        if(s.equals(""))System.out.println(true);
-        boolean flag =false;
-        for( i = 0 ; i < m ;i++){
+        int j = 0, i = 0;
+        if (s.equals("")) System.out.println(true);
+        boolean flag = false;
+        for (i = 0; i < m; i++) {
             flag = false;
-            while(j<n){
-                if(s.charAt(i)==t.charAt(j)) {
+            while (j < n) {
+                if (s.charAt(i) == t.charAt(j)) {
                     flag = true;
                     j++;
                     break;
                 }
                 j++;
             }
-            if(j==n)break;
+            if (j == n) break;
         }
-        if(!flag)System.out.println( false);
-        else if(i==(m-1))System.out.println(true);
-        else if(i==m)System.out.println(true);
-        else System.out.println(false);;
+        if (!flag) System.out.println(false);
+        else if (i == (m - 1)) System.out.println(true);
+        else if (i == m) System.out.println(true);
+        else System.out.println(false);
+        ;
     }
+
     @Test
     /**两个一起动，就用双指针，一个循环就能解决 */
-    public void answer(){
+    public void answer() {
         String s = "abc";
         String t = "ahbgdc";
         int n = s.length(), m = t.length();
@@ -44,9 +46,10 @@ public class 判断子序列 {
         }
         System.out.println(i == n);
     }
+
     @Test
     /** 大数据量的访问,先预处理一次，预处理的方法可以有多种，穷举，动规等*/
-    public void answers(){
+    public void answers() {
         String s = "abc";
         String t = "ahbgdc";
         int n = s.length(), m = t.length();

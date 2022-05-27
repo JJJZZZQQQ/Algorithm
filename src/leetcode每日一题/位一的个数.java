@@ -14,9 +14,9 @@ public class 位一的个数 {
         System.out.println(sum);*/
         //法2，用 n&(n-1) 结果为去掉最后一位的1,直接去掉二进制中位置最靠后的1
         int n = -3;
-        int sum =0 ;
-        while (n!=0){
-            n&=(n-1);
+        int sum = 0;
+        while (n != 0) {
+            n &= (n - 1);
             sum++;
         }
         System.out.println(sum);

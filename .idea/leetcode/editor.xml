@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/[337]打家劫舍 III.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/doc/content/[337]打家劫舍 III.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com337" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/[337]打家劫舍 III.java" />
+              <option name="titleSlug" value="house-robber-iii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/[剑指 Offer II 084]含有重复元素集合的全排列 .java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/doc/content/[剑指 Offer II 084]含有重复元素集合的全排列 .md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 084" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/../LeetCode/src/leetcode/editor/cn/[剑指 Offer II 084]含有重复元素集合的全排列 .java" />
+              <option name="titleSlug" value="7p8L0Z" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
