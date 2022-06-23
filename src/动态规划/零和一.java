@@ -25,4 +25,33 @@ public class 零和一 {
         System.out.println(dp[n][m]);
 
     }
+    public int findMaxForm(String[] strs, int m, int n) {
+        int k = strs.length;
+        int [][] weight = new int[k][2];
+        //先处理strs,转换成对应的重量
+
+        for(int i = 0; i < k ;i++ ) {
+            int num0 = 0 , num1 = 0;
+            for(char c : strs[i].toCharArray()) {
+                if(c == '0')num0++;
+                else num1++;
+            }
+            weight[i][0] = num0;
+            weight[i][1] = num1;
+        }
+        //对于i 个 0 ，j个 1来说，最大的子集数量
+        int [][] dp = new int[m + 1][n + 1];
+
+        //dp[i][j] = max(dp[i][j] , dp[i - weight[c][0]][j - weight[c][1]] + 1)
+        for(int c = 1 ; c <= k ;c++) {
+            for(int i = 1 ; i <= m ; i++) {
+                for(int j = n ; j >= weight[c - 1][1] ;j--) {
+                    dp[i][j] = Math.max(dp[i][j] , dp[i - weight[c][0]][j - weight[c][1]] + 1);
+                }
+            }
+        }
+        return dp[m][n];
+
+    }
+
 }
