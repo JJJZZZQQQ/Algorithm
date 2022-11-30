@@ -1,49 +1,50 @@
 // 本题为考试单行多行输入输出规范示例，无需提交，不计分。
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+
+import org.junit.Test;
+
+import java.util.*;
 
 public class Main {
     /*registration complete
 illegal length
 acount existed
 illegal charactor*/
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        Set<String> set = new HashSet<>();
 
-        for (int i = 0; i < n; i++) {
-            String s = in.next();
-            if(s == null) {
-                System.out.println("illegal charactor");
-                continue;
+
+    @Test
+    public void amain() {
+        foo(new int[]{-1,1,2,3,4,5,6} , 3, 6);
+    }
+
+    //打印所有和为n的 m个数之和
+    //-1,1,2,3,4,5,6
+    ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+
+    void foo(int[] arr, int m, int n) {
+        Arrays.sort(arr);
+        dfs(arr, n, m, -1, new ArrayList<>());
+
+        for (ArrayList<Integer> re : res) {
+            for (int i = 0; i < re.size(); i++) {
+                System.out.print(re.get(i));
+                if(i != re.size() - 1) System.out.print(",");
             }
-            int size = s.length();
-            if(size > 12 || size < 6) {
-                System.out.println("illegal length");
-                continue;
-            }
-            if(!isZimu(s)) {
-                System.out.println("illegal charactor");
-                continue;
-            }
-            if(set.contains(s)) {
-                System.out.println("acount existed");
-                continue;
-            }
-            set.add(s);
-            System.out.println("registration complete");
+            System.out.println();
         }
     }
-    public static boolean isZimu(String s) {
-        for (char c : s.toCharArray()) {
-            if((c >= 'a' && c <= 'z' )|| (c >= 'A' && c <= 'Z')) {
 
-            } else {
-                return false;
-            }
+    void dfs(int[] arr, int n, int m, int index, ArrayList<Integer> list) {
+        //如果选完数了且和为n，添加到结果里面
+        if (m == 0 && n == 0) {
+            res.add(new ArrayList<>(list));
         }
-        return true;
+
+        for(int i = index + 1; i < arr.length ; i++) {
+            list.add(arr[i]);
+            //和减n - arr[i],个数-1
+            dfs(arr,n - arr[i],m - 1,i, list);
+            //回溯
+            list.remove(list.size() - 1);
+        }
     }
 }
